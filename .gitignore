@@ -1,0 +1,10 @@
+# Visual Studio
+*.idb
+*.ilk
+*.log
+*.obj
+*.pdb
+*.tlog
+*.vcxproj.user
+.vs
+
