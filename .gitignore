@@ -1,6 +1,8 @@
 # Visual Studio
 *.idb
 *.ilk
+*.iobj
+*.ipdb
 *.log
 *.obj
 *.pdb
