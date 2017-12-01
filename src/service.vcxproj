@@ -26,7 +26,7 @@
     <ProjectGuid>{966A049E-D167-466C-A25A-39AEF3CCA723}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>service</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -77,13 +77,13 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\bin\</OutDir>
     <IntDir>$(SolutionDir)\temp\$(Platform)\$(Configuration)\</IntDir>
-    <TargetName>DellSpacebarFix-x32</TargetName>
+    <TargetName>DellSpacebarFix-x32-debug</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\bin\</OutDir>
     <IntDir>$(SolutionDir)\temp\$(Platform)\$(Configuration)\</IntDir>
-    <TargetName>DellSpacebarFix-x64</TargetName>
+    <TargetName>DellSpacebarFix-x64-debug</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>

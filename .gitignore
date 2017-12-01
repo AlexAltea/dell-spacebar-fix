@@ -10,3 +10,5 @@
 *.vcxproj.user
 .vs
 
+# Binaries
+*-debug.exe
