@@ -31,8 +31,8 @@ The unwanted _double spaces_ are detected based on the following observed patter
 #1  T0  VK_SPACE  WM_KEYDOWN
 #2  T0  VK_SPACE  WM_KEYUP
 #3  T1  *         WM_KEYUP
-#4  T1  VK_SPACE  WM_KEYDOWN
-#5  T2  VK_SPACE  WM_KEYUP
+#4  T2  VK_SPACE  WM_KEYDOWN
+#5  T3  VK_SPACE  WM_KEYUP
 ```
 
 The unwanted _inserted spaces_ are detected based on the following observed pattern, where *Ti* represent an increasing sequence of timestamps.
@@ -41,14 +41,14 @@ The unwanted _inserted spaces_ are detected based on the following observed patt
 #1  T0  VK_SPACE  WM_KEYDOWN
 #2  T0  VK_SPACE  WM_KEYUP
 #3  T1  *         WM_KEYDOWN
-#4  T1  VK_SPACE  WM_KEYDOWN
-#5  T2  VK_SPACE  WM_KEYUP
+#4  T2  VK_SPACE  WM_KEYDOWN
+#5  T3  VK_SPACE  WM_KEYUP
 ```
 
-This service will detect the event patterns (#1,#2) and (#3,#4) and for each occurrence drop the events #2 and #4 respectively. Thus, the final events for both above-mentioned sequences will be:
+Most of the times, #3 and #4 have identical timestamps, i.e. *T1 = T2*. This service will detect the event patterns (#1,#2) and (#3,#4) and for each occurrence drop the events #2 and #4 respectively. Thus, the final events for both above-mentioned sequences will be:
 
 ```
 #1  T0  VK_SPACE  WM_KEYDOWN
 #3  T1  *         *
-#5  T2  VK_SPACE  WM_KEYUP
+#5  T3  VK_SPACE  WM_KEYUP
 ```

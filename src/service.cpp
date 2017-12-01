@@ -53,16 +53,21 @@ LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
         // Filter out #4 from (#3, #4) for doubled spaces
         if (lastKey != VK_SPACE && lastEvent == WM_KEYUP &&
             thisKey == VK_SPACE && thisEvent == WM_KEYDOWN &&
-            thisTime == lastTime && dropNext) {
+            dropNext) {
             dropNext = false;
             return 1;
         }
         // Filter out #4 from (#3, #4) for inserted spaces
         if (lastKey != VK_SPACE && lastEvent == WM_KEYDOWN &&
             thisKey == VK_SPACE && thisEvent == WM_KEYDOWN &&
-            thisTime == lastTime && dropNext) {
+            dropNext) {
             dropNext = false;
             return 1;
+        }
+
+        // Clear flag if nothing was hit
+        if (lastKey != VK_SPACE && dropNext) {
+            dropNext = false;
         }
 
         // Update state
